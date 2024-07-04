@@ -2,7 +2,7 @@ let currentPlayer = 'X';
 let moves = 0;
 let gameActive = true;
 let timerX, timerO;
-const timerDuration = 60; // 60 seconds
+const timerDuration = 60; 
 let timeLeftX = timerDuration;
 let timeLeftO = timerDuration;
 
@@ -21,11 +21,10 @@ let statusDisplay = document.getElementById('status');
 let timerDisplayX = document.getElementById('timerX');
 let timerDisplayO = document.getElementById('timerO');
 
-// Initialize timers
 timerDisplayX.textContent = `Time left for Player X: ${timerDuration}s`;
 timerDisplayO.textContent = `Time left for Player O: ${timerDuration}s`;
 
-// Function to start the timer for currentPlayer
+
 function startTimer() {
     if (currentPlayer === 'X') {
         timerX = setInterval(updateTimerX, 1000);
@@ -34,7 +33,6 @@ function startTimer() {
     }
 }
 
-// Function to update timer for Player X
 function updateTimerX() {
     timeLeftX--;
     timerDisplayX.textContent = `Time left for Player X: ${timeLeftX}s`;
@@ -46,7 +44,7 @@ function updateTimerX() {
     }
 }
 
-// Function to update timer for Player O
+
 function updateTimerO() {
     timeLeftO--;
     timerDisplayO.textContent = `Time left for Player O: ${timeLeftO}s`;
@@ -86,7 +84,20 @@ function cellClicked(cellIndex) {
 }
 
 function checkWin() {
-    // Your existing checkWin function remains the same
+    for (let condition of winningConditions) {
+        let [a, b, c] = condition;
+
+        
+        if (cells[a].textContent !== '' &&
+            cells[a].textContent === cells[b].textContent &&
+            cells[a].textContent === cells[c].textContent) {
+            
+            return true; 
+        }
+    }
+
+    return false; 
+    
 }
 
 function resetGame() {
