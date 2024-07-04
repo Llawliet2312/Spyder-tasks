@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>RecipeFinder.com</h1>
+        <form id="ingredientForm">
+            <h2>Select Ingredients:</h2>
+            <div id="ingredientList">
+                <label><input type="checkbox" value="Chicken"> Chicken <img class="ingredient-image" src="Ingredients/Chicken.jpg"></label><br>
+                <label><input type="checkbox" value="Cheese"> Cheese <img class="ingredient-image" src="Ingredients/bread.jpg"></label><br>
+                <label><input type="checkbox" value="Vegetables"> Vegetables <img class="ingredient-image" src="Ingredients/vegies.jpg"></label><br>
+                <label><input type="checkbox" value="Fish"> Fish <img class="ingredient-image" src="Ingredients/download.jpg"></label><br>
+                <label><input type="checkbox" value="Rice"> Rice <img class="ingredient-image" src="Ingredients/Rice.png"></label><br>
+                <label><input type="checkbox" value="Bread"> Bread <img class="ingredient-image" src="Ingredients/bread.jpg"></label><br>
+            </div>
+            <button type="submit">Find Recipes</button>
+        </form>
+
+        <div id="recipeResults">
+           
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
